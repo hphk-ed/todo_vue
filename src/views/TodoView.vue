@@ -29,7 +29,11 @@ export default {
 
   methods: {
 
-    accessServer(context) {
+    connectServer(method, url, data={}){
+      const context = {
+        method, url, data
+      }
+
       axios(context)
       .then(res => {
         // console.log(res)
@@ -40,41 +44,25 @@ export default {
       })
     },
     
-    createTodo(todo) {
-      const context = {
-        method: 'post',
-        url: BASE_URL+todo.id+'/',
-        data: todo,
-      }
-      this.accessServer(context)
+    createTodo(input) {
+      const URL = BASE_URL+'todo/'
+      this.connectServer('post', URL, input)
     },
 
     updateTodo(todo) {
-      const context = {
-        method: 'put',
-        url: BASE_URL+todo.id+'/',
-        data: todo,
-      }
-      this.accessServer(context)
+      const URL = BASE_URL+'todo/'+todo.id+'/'
+      this.connectServer('put', URL, todo)
     }, 
 
     deleteTodo(todo){
-      const context = {
-        method: 'delete',
-        url: BASE_URL+todo.id+'/',
-        data: todo,
-      }
-      this.accessServer(context)
+      const URL = BASE_URL+'todo/'+todo.id+'/'
+      this.connectServer('delete', URL, todo)
     }
 
   },
 
   created() {
-    const context = {
-        method: 'get',
-        url: BASE_URL,
-    }
-    this.accessServer(context)
+    this.connectServer('get', BASE_URL)
   }
 };
 </script>
