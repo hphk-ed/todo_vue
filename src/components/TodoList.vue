@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h2 class="ml-5">Todo List</h2>
+    <hr>
     <div class="text-left ml-3 py-3">
       <select v-model="showList">
         <option value="all">전체 보기</option>

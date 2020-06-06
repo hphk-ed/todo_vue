@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>todotodo</h1>
+    <h1>Todo Todo Ddo</h1>
     <TodoInput @new-todo="createTodo"/>
     <TodoList :todoList="todos" @update="updateTodo" @delete="deleteTodo"/>
   </div>
