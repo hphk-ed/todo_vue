@@ -7,10 +7,15 @@
         <input class="ml-3 my-auto" v-else v-model="inputText" @keydown.enter="updateText"> 
         <span class="ml-3 timefont"> {{ setTime }} </span>
       </div>
-      <div>
-        <button class="badge badge-success mr-1" @click="switchEdit" v-if="!isEditable">E</button>
-        <button class="badge badge-warning mr-1" @click="switchEdit" v-else>C</button>
-        <button class="badge badge-danger" @click="deleteTodo">X</button>
+        <!-- Non Editable mode -->
+      <div v-if="!isEditable">
+        <button class="badge badge-success mr-1" @click="switchEdit">E</button>
+        <button class="badge badge-danger" @click="deleteTodo" >X</button>
+      </div>
+      <!-- Editable mode -->
+      <div v-else>
+        <button class="badge badge-primary mr-1" @click="updateText" >A</button>
+        <button class="badge badge-warning" @click="switchEdit">C</button>
       </div>
     </div>
   </li>
