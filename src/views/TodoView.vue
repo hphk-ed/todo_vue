@@ -34,7 +34,8 @@ export default {
         this.todos = res.data.todos
       })
       .catch(err => {
-        console.log(err)
+        console.log(URL)
+        console.error(err)
       })
     },
 
