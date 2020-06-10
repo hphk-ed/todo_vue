@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <input class="w-75" v-model='input' @keydown.enter="newTodo">
+    <input class="w-75" v-model='input' @keypress.enter="newTodo">
     <button @click="newTodo">추가</button>
   </div>
 </template>
