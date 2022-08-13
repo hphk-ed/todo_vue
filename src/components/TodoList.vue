@@ -46,7 +46,7 @@ export default {
       this.$emit('delete', todo)
     }
 
-  }, 
+  },
   computed: {
     eachList() {
       return this.todoList.filter(todo => {
